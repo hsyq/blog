@@ -1,0 +1,45 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.14'
+
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      # vue项目改为dist
+      - name: Deploy Github Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: ./vuepress/dist # The folder the action should deploy.
+
+
+      - name: DEPOLY
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}  # 密钥
+            ARGS: '-rltgoDzvO --delete'
+            SOURCE: ".vuepress/dist " # 将要复制到云服务器的静态文件夹
+            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}  # 密钥
+            REMOTE_USER: ${{ secrets.REMOTE_USER }}  # 密钥
+            TARGET: ${{ secrets.TARGET_DIR }}  # 密钥
+
+
