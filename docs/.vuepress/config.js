@@ -9,6 +9,7 @@ module.exports = {
   title: '昆吾-前端知识分享',
   // 网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中
   description: '前端技术博客，分享前端学习路上的资料。专注web前端开发、移动端开发、前端工程化、前端职业发展，做最有价值的前端技术学习网站。',
+
   // 额外的需要被注入到当前页面的HTML<head>中的标签，是一个数组
   // 每个标签都可以以[tagName, { attrName: attrValue }, innerHTML?] 的格式指定
   head: [
@@ -26,8 +27,9 @@ module.exports = {
       })();
       `
     ]
-    // 设置 Google 的 Search Console
-    // ['meta', { name: 'google-site-verification', content: '_rNB9Nt0ukzWmMfhXSSxCHUAeeMs24OiuhGm4QjdwXA' }]
+
+    // 设置 Baidu 的 Search Console
+    // ['meta', { name: 'baidu-site-verification', content: '_rNB9Nt0ukzWmMfhXSSxCHUAeeMs24OiuhGm4QjdwXA' }]
   ],
 
 
