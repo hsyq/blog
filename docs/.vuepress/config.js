@@ -110,8 +110,8 @@ module.exports = {
           // 通过嵌套的 items 来在 下拉列表 中设置分组
           {
             text: '开发案例', items: [
-              { text: '接口服务器案例', link: '/vue3/' },
-              { text: '上传文件案例', link: '/vue3/' },
+              { text: '接口服务器案例', link: '/demo/' },
+              { text: '上传文件案例', link: '/demo/' },
             ]
           },
         ]
@@ -172,12 +172,17 @@ module.exports = {
         ],
       },],
 
-      // 设置node的侧边栏
-      '/node/': [{
-        title: "Node",
+      // node导航栏不需要设置侧边栏，应该给它的子项设置侧边栏
+      '/koa/': [{
+        title: "Koa",
         children: [
-          "/vue3/1.响应式原理",
-          "/vue3/2.computed",
+          "/koa/1.基本使用",
+        ],
+      },],
+      '/nest/': [{
+        title: "Nest",
+        children: [
+          "/koa/1.基本使用",
         ],
       },],
 
