@@ -37,6 +37,10 @@ module.exports = {
         a.setAttribute('target', '_blank');
         a.setAttribute('src', 'https://beian.miit.gov.cn');
         main.appendChild(a);
+        a.style.cursor = 'pointer';
+        a.addEventListener('click', function(e){
+          location.href = 'https://beian.miit.gov.cn';
+        }, false); 
       }, 300);
       `
     ],
