@@ -13,7 +13,6 @@ module.exports = {
   // 额外的需要被注入到当前页面的HTML<head>中的标签，是一个数组
   // 每个标签都可以以[tagName, { attrName: attrValue }, innerHTML?] 的格式指定
   head: [
-    // ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'keywords', content: '前端知识分享' }],
     [
@@ -26,7 +25,21 @@ module.exports = {
         s.parentNode.insertBefore(hm, s);
       })();
       `
-    ]
+    ],
+
+    [
+      'script', {}, `
+      setTimeout(function(){
+        var main = document.querySelector('main');
+        main.style.textAlign = 'center';
+        var a = document.createElement("a");
+        a.textContent = "津ICP备2022002959号";
+        a.setAttribute('target', '_blank');
+        a.setAttribute('src', 'https://beian.miit.gov.cn');
+        main.appendChild(a);
+      }, 300);
+      `
+    ],
 
     // 设置 Baidu 的 Search Console
     // ['meta', { name: 'baidu-site-verification', content: '_rNB9Nt0ukzWmMfhXSSxCHUAeeMs24OiuhGm4QjdwXA' }]
@@ -58,7 +71,7 @@ module.exports = {
   // 默认使用的主题是vuepress-theme-default，https://vuepress.vuejs.org/zh/theme/default-theme-config.html
   themeConfig: {
     // 加导航栏 Logo ，Logo 可以被放置在公共文件目录，即.vuepress/public
-    logo: '/logo.png',
+    logo: '/hero.webp',
 
 
     // 自动在每个页面的导航栏生成生成一个GitHub链接，以及在页面的底部生成一个"Edit this page"链接
@@ -111,7 +124,6 @@ module.exports = {
           {
             text: '开发案例', items: [
               { text: '接口服务器案例', link: '/demo/' },
-              { text: '上传文件案例', link: '/demo/' },
             ]
           },
         ]
