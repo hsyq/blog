@@ -15,6 +15,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'keywords', content: '前端知识分享' }],
+    ['meta', { name: 'baidu-site-verification', content: 'code-WKuN3yvILD' }],
     [
       'script', {}, `
       var _hmt = _hmt || [];
@@ -27,23 +28,23 @@ module.exports = {
       `
     ],
 
-    [
-      'script', {}, `
-      setTimeout(function(){
-        var main = document.querySelector('main');
-        main.style.textAlign = 'center';
-        var a = document.createElement("a");
-        a.textContent = "津ICP备2022002959号";
-        a.setAttribute('target', '_blank');
-        a.setAttribute('src', 'https://beian.miit.gov.cn');
-        main.appendChild(a);
-        a.style.cursor = 'pointer';
-        a.addEventListener('click', function(e){
-          location.href = 'https://beian.miit.gov.cn';
-        }, false); 
-      }, 300);
-      `
-    ],
+    // [
+    //   'script', {}, `
+    //   setTimeout(function(){
+    //     var main = document.querySelector('main');
+    //     main.style.textAlign = 'center';
+    //     var a = document.createElement("a");
+    //     a.textContent = "津ICP备2022002959号";
+    //     a.setAttribute('target', '_blank');
+    //     a.setAttribute('src', 'https://beian.miit.gov.cn');
+    //     main.appendChild(a);
+    //     a.style.cursor = 'pointer';
+    //     a.addEventListener('click', function(e){
+    //       location.href = 'https://beian.miit.gov.cn';
+    //     }, false); 
+    //   }, 300);
+    //   `
+    // ],
 
     // 设置 Baidu 的 Search Console
     // ['meta', { name: 'baidu-site-verification', content: '_rNB9Nt0ukzWmMfhXSSxCHUAeeMs24OiuhGm4QjdwXA' }]
