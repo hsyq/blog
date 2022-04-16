@@ -8,14 +8,18 @@ module.exports = {
   // 网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上
   title: '昆吾-前端知识分享',
   // 网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中
-  description: '前端技术博客，分享前端学习路上的资料。专注web前端开发、移动端开发、前端工程化、前端职业发展，做最有价值的前端技术学习网站。',
+  description: '前端技术博客，分享前端学习路上的资料。专注web前端开发、前端工程化，做最有价值的前端技术学习网站。',
 
   // 额外的需要被注入到当前页面的HTML<head>中的标签，是一个数组
   // 每个标签都可以以[tagName, { attrName: attrValue }, innerHTML?] 的格式指定
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'keywords', content: '前端知识分享' }],
+
+    // 设置 Baidu 的 Search Console
     ['meta', { name: 'baidu-site-verification', content: 'code-WKuN3yvILD' }],
+
+    // 设置百度统计
     [
       'script', {}, `
       var _hmt = _hmt || [];
@@ -45,12 +49,7 @@ module.exports = {
     //   }, 300);
     //   `
     // ],
-
-    // 设置 Baidu 的 Search Console
-    // ['meta', { name: 'baidu-site-verification', content: '_rNB9Nt0ukzWmMfhXSSxCHUAeeMs24OiuhGm4QjdwXA' }]
   ],
-
-
 
   // 指定用于 dev server 的主机名，默认值是 0.0.0.0
   // host: '0.0.0.0',
@@ -222,4 +221,21 @@ module.exports = {
     displayAllHeaders: true
 
   },
+
+  plugins: [
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          return new Date(timestamp).toLocaleDateString();
+        }
+      }
+    ],
+    [
+      'sitemap',
+      {
+        hostname: 'https://kunwu.tech'
+      }
+    ]
+  ]
 }

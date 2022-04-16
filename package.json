@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/hsyq/blog#readme",
   "devDependencies": {
-    "vuepress": "^1.9.7"
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-sitemap": "^2.3.1"
   }
 }
