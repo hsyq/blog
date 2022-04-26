@@ -15,6 +15,6 @@ features:
 ---
 
 ::: slot footer
-MIT Licensed | Copyright © 2018-present Kunwu |  [津ICP备2022002959号](https://beian.miit.gov.cn)
+MIT Licensed | Copyright © 2018-present Kunwu |  [津ICP备2022002959号](https://beian.miit.gov.cn) |   [津公网安备12011002022027号](http://www.beian.gov.cn/)
 :::
 
