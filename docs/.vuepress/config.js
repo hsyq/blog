@@ -113,9 +113,13 @@ module.exports = {
 
     // 设置导航栏链接
     nav: [
-      { text: '主页', link: '/' },
+      // link 必须以 / 结尾
+      { text: '书单', link: '/book/' },
+      { text: '工具', link: '/devtool/' },
+
 
       { text: '前端工程化', link: '/engineering/' },
+      { text: 'Docker', link: '/docker/' },
       { text: 'Vue3', link: '/vue3/' },
 
       {
@@ -138,18 +142,27 @@ module.exports = {
         items: [
           { text: 'Mysql', link: '/mysql/' },
           { text: 'MongoDB', link: '/mongodb/' },
-          { text: '开发案例', link: '/' },
+          { text: 'Redis', link: '/redis/' },
         ]
       },
 
       { text: '前端面试', link: '/fe-interview/' },
 
       {
+        text: '文档',
+        items: [
+          { text: 'PM2', link: '/docs/pm2/' },
+          { text: 'Log4js', link: '/docs/log4js/' },
+        ]
+      },
+      // { text: '文档', link: 'https://docs.kunwu.tech' },
+
+      {
         text: '博客',
         items: [
           { text: 'Github', link: 'https://github.com/hsyq' },
           { text: '语雀', link: 'https://www.yuque.com/kunwu-mi1a0' },
-          { text: '掘金', link: 'https://juejin.cn/user/3878732751440253/posts' }
+          { text: '掘金', link: 'https://juejin.cn/user/2467751560226270/posts' }
         ]
       }
     ],
