@@ -81,18 +81,18 @@ module.exports = {
 
     // 以下为可选的  编辑链接 选项，用来生成一个编辑页面的连接
     // 假如你的文档仓库和项目本身不在一个仓库：
-    docsRepo: 'hsyq/blog',
+    // docsRepo: 'hsyq/blog',
 
     // 假如文档不是放在仓库的根目录下：
-    docsDir: 'docs',
+    // docsDir: 'docs',
 
     // 假如文档放在一个特定的分支下：
-    docsBranch: 'main',
+    // docsBranch: 'main',
     // 是否显示编辑链接默认是 false, 设置为 true 来启用
-    editLinks: true,
-
-    // 默认为 "Edit this page"
-    editLinkText: '帮助改善此页面！',
+    editLink: {
+      pattern: 'https://github.com/hsyq/blog/:path',
+      text: '帮助改善此页面'
+    },
 
     // 是否启用搜索框，默认为true
     search: true,
