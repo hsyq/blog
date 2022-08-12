@@ -130,24 +130,27 @@ module.exports = {
         ]
       },
 
-      {
-        text: '数据库',
-        items: [
-          { text: 'Mysql', link: '/mysql/' },
-          { text: 'MongoDB', link: '/mongodb/' },
-          { text: 'Redis', link: '/redis/' },
-        ]
-      },
+      // {
+      //   text: '数据库',
+      //   items: [
+      //     // { text: 'Mysql', link: '/mysql/' },
+      //     // { text: 'MongoDB', link: '/mongodb/' },
+      //     // { text: 'Redis', link: '/redis/' },
+      //   ]
+      // },
 
       { text: '前端面试', link: '/fe-interview/' },
 
-      {
-        text: '文档',
-        items: [
-          { text: 'PM2', link: '/docs/pm2/' },
-          { text: 'Log4js', link: '/docs/log4js/' },
-        ]
-      },
+      // {
+      //   text: '文档',
+      //   items: [
+      //     { text: 'PM2', link: '/docs/pm2/' },
+      //     { text: 'Log4js', link: '/docs/log4js/' },
+      //     { text: 'Sequelize', link: '/docs/log4js/' },
+      //     { text: 'Mongoose', link: '/docs/log4js/' },
+      //     { text: 'Pnpm', link: '/docs/log4js/' },
+      //   ]
+      // },
       // { text: '文档', link: 'https://docs.kunwu.tech' },
 
       {
