@@ -237,7 +237,7 @@ wget
 
 由于我是在阿里云服务器上安装，所以先要在安全组中开启redis的端口：
 
-![image-20220510173354724](https://cdn.jsdelivr.net/gh/hsyq/assets/imgs/2022-05/202205101733763.png)
+![](https://static.kunwu.tech/images/2022-08/202208112323597.webp)
 
 
 
@@ -250,7 +250,7 @@ docker images redis
 
 
 
-![image-20220510171851343](https://cdn.jsdelivr.net/gh/hsyq/assets/imgs/2022-05/202205101718378.png)
+![](https://static.kunwu.tech/images/2022-08/202208112323326.webp)
 
 
 
@@ -278,9 +278,9 @@ docker exec -it 9831 bash
 
 进入容器后，默认所在的目录即为redis的工作目录，通过redis-cli命令启动：
 
+![](https://static.kunwu.tech/images/2022-08/202208112324479.webp)
 
 
-![image-20220510171747361](https://cdn.jsdelivr.net/gh/hsyq/assets/imgs/2022-05/202205101717406.png)
 
 
 
@@ -345,7 +345,11 @@ Redis官方没有提供适合windows版本的安装包。
 
 下载地址：https://github.com/tporadowski/redis/releases
 
-![image-20220510173820082](https://cdn.jsdelivr.net/gh/hsyq/assets/imgs/2022-05/202205101738140.png)
+
+
+
+
+![](https://static.kunwu.tech/images/2022-08/202208112322615.webp)
 
 
 
@@ -355,7 +359,7 @@ Redis官方没有提供适合windows版本的安装包。
 
 安装好之后，来到安装目录：
 
-<img src="https://cdn.jsdelivr.net/gh/hsyq/assets/imgs/2022-05/202205221347860.png" alt="image-20220522134704776"  />
+![](https://static.kunwu.tech/images/2022-08/202208112322637.webp)
 
 
 
@@ -391,10 +395,6 @@ requirepass tenny     //注意，行前不能有空格
 
 
 这里不再具体演示。
-
-
-
-
 
 
 

@@ -5,17 +5,21 @@
 module.exports = {
   // 部署应用的基础路径
   base: '/',
-  // 网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上
+  // 站点的lang属性。这个属性将作为<html lang="en-US">标记渲染到页面HTML中。
+  lang: "zh-CN",
+
+  //站点的标题。 这是所有页面标题的前缀，并显示在导航栏中。
   title: '昆吾-前端知识分享',
-  // 网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中
+
+  // 站点的描述。 这将作为<meta>标记渲染在页面HTML中。
   description: '前端技术博客，分享前端学习路上的资料。专注web前端开发、前端工程化，做最有价值的前端技术学习网站。',
 
   // 额外的需要被注入到当前页面的HTML<head>中的标签，是一个数组
   // 每个标签都可以以[tagName, { attrName: attrValue }, innerHTML?] 的格式指定
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'keywords', content: '前端知识分享' }],
+    ['link', { rel: "icon", type: "image/svg+xml", href: "favicon.ico" }],
 
+    ['meta', { name: 'keywords', content: '前端知识分享' }],
     // 设置 Baidu 的 Search Console
     ['meta', { name: 'baidu-site-verification', content: 'code-WKuN3yvILD' }],
 
@@ -51,23 +55,6 @@ module.exports = {
     // ],
   ],
 
-  // 指定用于 dev server 的主机名，默认值是 0.0.0.0
-  // host: '0.0.0.0',
-
-  // 指定 dev server 的端口
-  // port: 8080,
-
-  // dest: '',
-
-  // 提供多语言支持的语言配置。具体细节请查看 多语言支持。
-  locales: {
-    '/': {
-      lang: 'zh-CN'
-    }
-  },
-  // 一个函数，用来控制对于哪些文件，是需要生成 <link rel="prefetch"> 资源提示的
-  // shouldPrefetch: () => false,
-
   // 指定使用的自定义主题名
   // theme: '',
 
@@ -77,22 +64,33 @@ module.exports = {
     // 加导航栏 Logo ，Logo 可以被放置在公共文件目录，即.vuepress/public
     logo: '/hero.webp',
 
+    // 默认是关闭的，如果给定一个字符串，它将会作为前缀显示（默认值是：Last Updated）
+    // lastUpdated 是基于 git 的, 所以你只能在一个基于 git 的项目中启用它。
+    // 此外，由于使用的时间戳来自git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
+    // lastUpdated: '上次更新', // string | boolean
+    lastUpdated: true,
 
     // 自动在每个页面的导航栏生成生成一个GitHub链接，以及在页面的底部生成一个"Edit this page"链接
     // 会自动解析为一个完整的GitLab URL
-    repo: 'hsyq/blog',
+    // repo: 'hsyq/blog',
+    socialLinks: [{ icon: "github", link: "https://github.com/hsyq" }],
+
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: '查看仓库',
+    // repoLabel: '查看仓库',
+
     // 以下为可选的  编辑链接 选项，用来生成一个编辑页面的连接
     // 假如你的文档仓库和项目本身不在一个仓库：
     docsRepo: 'hsyq/blog',
+
     // 假如文档不是放在仓库的根目录下：
     docsDir: 'docs',
+
     // 假如文档放在一个特定的分支下：
     docsBranch: 'main',
     // 是否显示编辑链接默认是 false, 设置为 true 来启用
     editLinks: true,
+
     // 默认为 "Edit this page"
     editLinkText: '帮助改善此页面！',
 
@@ -100,11 +98,6 @@ module.exports = {
     search: true,
     // 调整默认搜索框显示的搜索结果数量，默认为10
     searchMaxSuggestions: 10,
-
-    // 默认是关闭的，如果给定一个字符串，它将会作为前缀显示（默认值是：Last Updated）
-    // lastUpdated 是基于 git 的, 所以你只能在一个基于 git 的项目中启用它。
-    // 此外，由于使用的时间戳来自git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
-    lastUpdated: '上次更新', // string | boolean
 
     // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
     nextLinks: true,
@@ -161,8 +154,15 @@ module.exports = {
         text: '博客',
         items: [
           { text: 'Github', link: 'https://github.com/hsyq' },
+          { text: '掘金', link: 'https://juejin.cn/user/2467751560226270/posts' },
           { text: '语雀', link: 'https://www.yuque.com/kunwu-mi1a0' },
-          { text: '掘金', link: 'https://juejin.cn/user/2467751560226270/posts' }
+          // { text: '知乎', link: '' },
+          // { text: '博客园', link: '' },
+          // { text: '简书', link: '' },
+          // { text: 'CSDN', link: '' },
+          // { text: '阿里云开发者社区', link: 'https://developer.aliyun.com/profile/wrjnpaijlcuvk' },
+          // { text: '腾讯云云开发者社区', link: 'https://cloud.tencent.com/developer/user/1901508/articles' },
+          // { text: 'InfoQ', link: 'https://www.infoq.cn/profile/01B8E97E328F14/publish' },
         ]
       }
     ],
@@ -236,19 +236,19 @@ module.exports = {
   },
 
   plugins: [
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          return new Date(timestamp).toLocaleDateString();
-        }
-      }
-    ],
-    [
-      'sitemap',
-      {
-        hostname: 'https://kunwu.tech'
-      }
-    ]
+    // [
+    //   '@vuepress/last-updated',
+    //   {
+    //     transformer: (timestamp, lang) => {
+    //       return new Date(timestamp).toLocaleDateString();
+    //     }
+    //   }
+    // ],
+    // [
+    //   'sitemap',
+    //   {
+    //     hostname: 'https://kunwu.tech'
+    //   }
+    // ]
   ]
 }

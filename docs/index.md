@@ -4,7 +4,7 @@ heroImage: /hero.webp
 heroText: 昆吾
 tagline: 拣尽寒枝不肯栖
 actionText: 开始阅读 →
-actionLink: /js/
+actionLink: /book/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

@@ -16,13 +16,29 @@
 
 Pnpm，即Permance npm，性能更强的npm。
 
-关于为什么它的性能更强，有一篇文章推荐阅读，[《Pnpm: 最先进的包管理工具》](https://zhuanlan.zhihu.com/p/404784010)，点击直达。
+关于为什么它的性能更强，有一篇文章推荐阅读，[《Pnpm: 最先进的包管理工具》](https://zhuanlan.zhihu.com/p/404784010)。
+
+
+
+## 特点
+
+快速：pnpm 是同类工具速度的将近 2 倍
+
+高效：node_modules 中的所有文件均链接自单一存储位置 
+
+支持单体仓库：pnpm 内置了对单个源码仓库中包含多个软件包的支持 
+
+权限严格：pnpm 创建的 node_modules 默认并非扁平结构，因此代码无法对任意软件包进行访问
+
+
+
+
 
 
 
 ## 安装
 
-通过npm进行安装：
+通过 npm 进行安装：
 
 ```bash
 npm install -g pnpm
@@ -32,9 +48,7 @@ npm install -g pnpm
 
 ## 配置
 
-
-
-pnpm 使用 [npm 的配置](https://docs.npmjs.com/misc/config) 格式。 因此，您设置配置的方式应该与 npm 相同。 例如，
+pnpm 使用 [npm 的配置](https://docs.npmjs.com/misc/config) 格式，进行配置的方式与 npm 相同。 例如，
 
 ```text
 pnpm config set store-dir /path/to/.pnpm-store
@@ -109,7 +123,7 @@ pnpm config edit
 
 
 
-## 常用命令
+# 常用命令
 
 ### pnpm init
 
@@ -253,9 +267,9 @@ pnpm add <git remote url>
 
 
 
-### pnpm install
+## pnpm install
 
-和npm一样，install命令的别名为i。
+和npm一样，`install` 命令的别名为 `i` 。
 
 
 
@@ -263,7 +277,25 @@ pnpm add <git remote url>
 
 在CI环境中, 如果存在需要更新的 lockfile 会安装失败.
 
-在 [workspace](https://pnpm.io/zh/workspaces)内, `pnpm install` 下载项目所有依赖. 如果想禁用这个行为, 将 `recursive-install` 设置为 `false`.
+在 [workspace](https://pnpm.io/zh/workspaces)内,  `pnpm install` 会安装项目所有依赖。如果想禁用这个行为，将 `recursive-install` 设置为 `false`。
+
+
+
+| Command                    | Meaning                          |
+| -------------------------- | -------------------------------- |
+| `pnpm i --offline`         | 仅从 store 中离线下载            |
+| `pnpm i --frozen-lockfile` | `pnpm-lock.yaml` is not updated  |
+| `pnpm i --lockfile-only`   | Only `pnpm-lock.yaml` is updated |
+
+
+
+### 配置项
+
+
+
+
+
+
 
 
 
@@ -271,30 +303,34 @@ pnpm add <git remote url>
 
 ```bash
 # 全局安装
-npm install global @vue/cli
+pnpm install global @vue/cli
+
 # 等同于
-npm i -g @vue/cli
+pnpm i -g @vue/cli
 
 # 本地安装，安装到项目目录中的node_modules
-npm i axios
+pnpm i axios
 
 # 安装到package.json中的dependencies字段，默认如此
-npm i axios --save
-# 或者
-npm i axios -S
-# 或者
-npm i axios
+pnpm i axios --save
 
-# 安装到package.json中的devDependencies字段，需要指定参数
-npm i axios --save-dev
 # 或者
-npm i axios -D
+pnpm i axios -S
+
+# 或者
+pnpm i axios
 
 
 # 安装到package.json中的devDependencies字段，需要指定参数
-npm i eslint --save-dev
+pnpm i axios --save-dev
 # 或者
-npm i eslint -D
+pnpm i axios -D
+
+
+# 安装到package.json中的devDependencies字段，需要指定参数
+pnpm i eslint --save-dev
+# 或者
+pnpm i eslint -D
 ```
 
 
@@ -302,7 +338,7 @@ npm i eslint -D
 无论添加依赖到哪个字段，直接通过install安装，都会一股脑儿全装上：
 
 ```bash
-npm install 
+pnpm install 
 ```
 
 
@@ -310,12 +346,42 @@ npm install
 如果指定安装 `dependencies`中的依赖：
 
 ```bash
-npm install --production
+pnpm install --production
+pnpm install --prod
+pnpm install -P
 ```
 
 
 
-### pnpm update
+如何设置了 NODE_ENV 变量，值为 ``，
+
+如果 `NODE_ENV`环境变量被设置为 production 则 pnpm 不会下载 `devDependencies` 中的任何包. 使用这个指令 pnpm 会忽略`NODE_ENV` 并用该指令替代其生产状态.
+
+
+
+
+
+
+
+npm install --production
+npm install --prod
+npm install -P 不能识别
+
+
+
+npm install --development 未测试
+npm install --prod 未测试
+npm install  未测试
+
+
+
+
+
+
+
+
+
+## pnpm update
 
 别名: `up`
 
@@ -327,7 +393,7 @@ npm install --production
 
 
 
-### npm remove
+## npm remove
 
 见名知义。
 
@@ -335,7 +401,7 @@ npm install --production
 
 
 
-### pnpm link
+## pnpm link
 
 别名: `ln`
 
@@ -349,7 +415,7 @@ pnpm link --global <pkg>
 
 
 
-### pnpm unlink
+## pnpm unlink
 
 取消链接一个系统范围的`package` (相对于 [`pnpm link`](https://pnpm.io/zh/cli/link)).
 
@@ -359,7 +425,7 @@ pnpm link --global <pkg>
 
 
 
-### pnpm import
+## pnpm import
 
 `pnpm import` 从另一个软件包管理器的 lock 文件生成 `pnpm-lock.yaml`。 支持的源文件：
 
@@ -375,7 +441,7 @@ pnpm link --global <pkg>
 
 
 
-### pnpm rebuild
+## pnpm rebuild
 
 别名： `rb`
 
@@ -383,7 +449,7 @@ pnpm link --global <pkg>
 
 
 
-### pnpm prune
+## pnpm prune
 
 移除不需要的`packages`。
 
@@ -403,7 +469,7 @@ prune 命令目前不支持在 `monorepo`中递归执行。 可以删除一个�
 
 
 
-### pnpm fetch
+## pnpm fetch
 
 将 lockfile 中列出包下载到虚拟存储中，包清单被忽略。
 
@@ -419,7 +485,7 @@ prune 命令目前不支持在 `monorepo`中递归执行。 可以删除一个�
 
 
 
-### pnpm install-test
+## pnpm install-test
 
 别名: `it`
 
@@ -471,7 +537,7 @@ pnpm build
 
 
 
-### pnpm start
+## pnpm start
 
 别名: `run start`
 
@@ -485,7 +551,7 @@ pnpm build
 
 
 
-### pnpm create
+## pnpm create
 
 使用@scope/create-<pkg> 或者 create-<pkg>创建一个项目。
 
