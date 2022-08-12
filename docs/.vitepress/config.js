@@ -170,64 +170,6 @@ module.exports = {
       }
     ],
 
-    // 基本的配置
-    sidebar: {
-      // 通过对象，为每个页面设置一个侧边栏
-      // 设置主页的侧边栏
-      // {
-      //   title: '欢迎学习', // 必要的
-      //   path: '/', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-      //   collapsable: false, // 不折叠
-      //   sidebarDepth: 1,    // 可选的, 默认值是 1
-      //   // initialOpenGroupIndex: -1, // 可选的, 默认值是 0
-      //   children: [
-      //     { title: "学前必读", path: "/" }
-      //   ]
-      // },
-
-      // 设置 engineering的侧边栏
-      '/engineering/': [
-        {
-          title: "工程化",
-          children: [
-            "/engineering/1.Webpack核心概念",
-            "/engineering/2.基本配置",
-          ],
-        },
-      ],
-      // 设置vue3的侧边栏
-      '/vue3/': [{
-        title: "Vue3",
-        children: [
-          "/vue3/1.响应式原理",
-          "/vue3/2.computed",
-        ],
-      },],
-
-      // node导航栏不需要设置侧边栏，应该给它的子项设置侧边栏
-      '/koa/': [{
-        title: "Koa",
-        children: [
-          "/koa/1.基本使用",
-        ],
-      },],
-      '/nest/': [{
-        title: "Nest",
-        children: [
-          "/koa/1.基本使用",
-        ],
-      },],
-
-      // 设置mysql的侧边栏
-      '/Mysql/': [{
-        title: "Mysql",
-        children: [
-          "/vue3/1.响应式原理",
-          "/vue3/2.computed",
-        ],
-      },],
-    },
-
     // 默认情况下，侧边栏会自动地显示由当前页面的标题（headers）组成的链接，并按照页面本身的结构进行嵌套，你可以通过 themeConfig.sidebarDepth 来修改它的行为。
     // 默认的深度是 1，它将提取到 h2 的标题；设置成 0 将会禁用标题（headers）链接；同时，最大的深度为 2，它将同时提取 h2 和 h3 标题。
     sidebarDepth: 1,
@@ -235,7 +177,6 @@ module.exports = {
     // 默认情况下，侧边栏只会显示由当前活动页面的标题（headers）组成的链接
     // 设置为true，表示显示所有页面的标题链接
     displayAllHeaders: true
-
   },
 
   plugins: [
