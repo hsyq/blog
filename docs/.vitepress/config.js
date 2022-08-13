@@ -8,8 +8,11 @@ module.exports = {
   // 站点的lang属性。这个属性将作为<html lang="en-US">标记渲染到页面HTML中。
   lang: "zh-CN",
 
+  lastUpdated: true,
+
   //站点的标题。 这是所有页面标题的前缀，并显示在导航栏中。
-  title: '昆吾-前端知识分享',
+  title: '昆吾',
+  // title: '昆吾-前端知识分享',
 
   // 站点的描述。 这将作为<meta>标记渲染在页面HTML中。
   description: '前端技术博客，分享前端学习路上的资料。专注web前端开发、前端工程化，做最有价值的前端技术学习网站。',
@@ -55,20 +58,17 @@ module.exports = {
     // ],
   ],
 
-  // 指定使用的自定义主题名
-  // theme: '',
-
   // 为当前的主题提供一些配置，这些选项依赖于你正在使用的主题
   // 默认使用的主题是vuepress-theme-default，https://vuepress.vuejs.org/zh/theme/default-theme-config.html
   themeConfig: {
     // 加导航栏 Logo ，Logo 可以被放置在公共文件目录，即.vuepress/public
     logo: '/hero.webp',
 
-    // 默认是关闭的，如果给定一个字符串，它将会作为前缀显示（默认值是：Last Updated）
-    // lastUpdated 是基于 git 的, 所以你只能在一个基于 git 的项目中启用它。
-    // 此外，由于使用的时间戳来自git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
-    // lastUpdated: '上次更新', // string | boolean
-    lastUpdated: true,
+    footer: {
+      message: 'MIT Licensed | Copyright © 2022-present Kunwu',
+      copyright: ' [津ICP备2022002959号] | [津公网安备12011002022027号]',
+      link_ba: ' [津ICP备2022002959号] | [津公网安备12011002022027号]'
+    },
 
     // 自动在每个页面的导航栏生成生成一个GitHub链接，以及在页面的底部生成一个"Edit this page"链接
     // 会自动解析为一个完整的GitLab URL
